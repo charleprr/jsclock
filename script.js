@@ -2,7 +2,7 @@ var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 
 ctx.font ='40px Windows';
-ctx.fillStyle = 'white';
+ctx.fillStyle = '#FFF';
 ctx.lineCap = 'round';
 
 dx = 266;
@@ -10,18 +10,18 @@ dy = 240;
 
 function getTime(){
 
-	Hours   = new Date().getHours();
-	Minutes = new Date().getMinutes();
-	Seconds = new Date().getSeconds();
-	Milliseconds = new Date().getMilliseconds();
+	hours = new Date().getHours();
+	minutes = new Date().getMinutes();
+	seconds = new Date().getSeconds();
+	milliseconds = new Date().getMilliseconds();
 
-	Hours   =  (Hours < 10)  ?  Hours  = "0" + Hours   : Hours;
-	Minutes = (Minutes < 10) ? Minutes = "0" + Minutes : Minutes;
-	Seconds = (Seconds < 10) ? Seconds = "0" + Seconds : Seconds;
-	Milliseconds = (Milliseconds < 10) ? Milliseconds  = "0" + Milliseconds : Milliseconds;
-	Milliseconds = (Milliseconds < 100) ? Milliseconds = "0" + Milliseconds : Milliseconds;
+	hours = (hours < 10) ? hours = "0" + hours : hours;
+	minutes = (minutes < 10) ? minutes = "0" + minutes : minutes;
+	seconds = (seconds < 10) ? seconds = "0" + seconds : meconds;
+	milliseconds = (milliseconds < 10) ? milliseconds  = "0" + milliseconds : milliseconds;
+	milliseconds = (milliseconds < 100) ? milliseconds = "0" + milliseconds : milliseconds;
 
-	T = Hours + ":" + Minutes + ":" + Seconds + ":" + Milliseconds;
+	T = hours + ":" + minutes + ":" + seconds + ":" + milliseconds;
 
 	return T
 }
@@ -31,7 +31,7 @@ function clear(){
 }
 
 function drawText(){
-	ctx.fillStyle = 'white';
+	ctx.fillStyle = '#FFF';
 	ctx.fillText(getTime(), dx,dy);
 }
 
@@ -51,7 +51,7 @@ function drawClock(){
 	yHours = cy + Math.cos(Math.PI+(new Date().getHours() / 12) * 2 * Math.PI * -1)*100;
 
 	ctx.beginPath();
-	ctx.strokeStyle = '#4af';
+	ctx.strokeStyle = '#4AF';
 	ctx.lineWidth = 12;
 	ctx.moveTo(cx,cy);
 	ctx.lineTo(xHours, yHours);
@@ -97,7 +97,7 @@ function drawClock(){
 	ctx.fill();
 	ctx.closePath();
 
-	// MILISECONDS
+	// MILLISECONDS
 	xMiliseconds = xSeconds + Math.sin(Math.PI+(new Date().getMilliseconds() / 1000) * 2 * Math.PI * -1)*40;
 	yMiliseconds = ySeconds + Math.cos(Math.PI+(new Date().getMilliseconds() / 1000) * 2 * Math.PI * -1)*40;
 
