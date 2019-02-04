@@ -1,3 +1,2 @@
 # JSClock
-A clock, made in JavaScript
-by Charly
+An interesting clock made in JavaScript.
